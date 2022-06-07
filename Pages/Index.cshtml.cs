@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace fiks_web.Pages;
+namespace Fiks.Pages;
 
 public class IndexModel : PageModel
 {

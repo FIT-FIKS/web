@@ -4,7 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>fiks_web</RootNamespace>
+    <RootNamespace>Fiks</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Data" />
+  </ItemGroup>
 
 </Project>
