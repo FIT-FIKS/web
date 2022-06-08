@@ -9,7 +9,7 @@ builder.Services.AddRazorPages( );
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<SeasonContext>(options =>
-        options.UseNpgsql(builder.Configuration.GetConnectionString("FiksWebDB")));
+        options.UseInMemoryDatabase(databaseName: "FIKSTest"));
 }
 else
 {
