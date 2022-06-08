@@ -1,19 +1,44 @@
-@page
-@model fiks_web.Pages.Administration.Seasons
+@page "{id:int?}"
+@model Fiks.Pages.Administration.SeasonsModel
 
 @{
-    Layout = null;
+    ViewData["title"] = "FIKS Seasons";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
+<h1>Seasons</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Seasons) {
+        <tr>
+            <td><a asp-page="./Seasons" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Title)</a></td>
+            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+        </tr>
+    }
+    </tbody>
+</table>
     
-</div>
-</body>
-</html>
+<hr />
+
+<h2>New season</h2>
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Season.Title" class="control-label"></label>
+        <input asp-for="Season.Title" class="form-control" />
+        <span asp-validation-for="Season.Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Season.Description" class="control-label"></label>
+        <input asp-for="Season.Description" class="form-control" />
+        <span asp-validation-for="Season.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
