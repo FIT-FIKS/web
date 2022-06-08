@@ -6,7 +6,7 @@ public static class SeedData
 {
     public static void Initialize(IServiceProvider serviceProvider)
     {
-        using (var context = new SeasonContext(serviceProvider.GetRequiredService<DbContextOptions<SeasonContext>>()))
+        using (var context = new FiksDbContext(serviceProvider.GetRequiredService<DbContextOptions<FiksDbContext>>()))
         {
             if (context == null || context.Season == null) throw new ArgumentNullException("No season in context");
 

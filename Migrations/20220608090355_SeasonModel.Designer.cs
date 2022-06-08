@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Fiks.Migrations
 {
-    [DbContext(typeof(SeasonContext))]
+    [DbContext(typeof(FiksDbContext))]
     [Migration("20220608090355_SeasonModel")]
     partial class SeasonModel
     {

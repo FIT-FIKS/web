@@ -8,7 +8,7 @@ builder.Services.AddRazorPages( );
 
 if (builder.Environment.IsDevelopment())
 {
-    builder.Services.AddDbContext<SeasonContext>(options =>
+    builder.Services.AddDbContext<FiksDbContext>(options =>
         options.UseInMemoryDatabase(databaseName: "FIKSTest"));
 }
 else
