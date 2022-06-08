@@ -11,9 +11,9 @@ public class SeasonsModel : PageModel
     /// Instance of object that can be used for logging
     private readonly ILogger logger;
     /// Database context, can be used for querying and modifications
-    private readonly SeasonContext context;
+    private readonly FiksDbContext context;
 
-    public SeasonsModel(ILogger<SeasonsModel> logger, SeasonContext context)
+    public SeasonsModel(ILogger<SeasonsModel> logger, FiksDbContext context)
     {
         this.logger = logger;
         this.context = context;

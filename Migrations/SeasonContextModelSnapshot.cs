@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Fiks.Migrations
 {
-    [DbContext(typeof(SeasonContext))]
+    [DbContext(typeof(FiksDbContext))]
     partial class SeasonContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
