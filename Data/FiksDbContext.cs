@@ -15,5 +15,7 @@ public class FiksDbContext : DbContext
             o.Property(v => v.Validated)
                 .HasDefaultValue(false);
         });
+
+        base.OnModelCreating(b);
     }
 }
