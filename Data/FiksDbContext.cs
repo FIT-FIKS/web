@@ -17,6 +17,10 @@ public class FiksDbContext : DbContext
 
     public DbSet<IdentityUserToken<long>> UserToken { get; set; }
 
+    public DbSet<IdentityUserRole<long>> UserRole { get; set; }
+
+    public DbSet<IdentityRole<long>> Role { get; set; }
+
     protected override void OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder b) {
         b.Entity<Models.School>(o => {
             o.Property(v => v.Validated)
@@ -44,6 +48,17 @@ public class FiksDbContext : DbContext
 
             o.HasMany<IdentityUserLogin<long>>().WithOne().HasForeignKey(ul => ul.UserId).IsRequired();
             o.HasMany<IdentityUserToken<long>>().WithOne().HasForeignKey(ut => ut.UserId).IsRequired();
+            o.HasMany<IdentityUserRole<long>>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
+        });
+
+        b.Entity<IdentityRole<long>>(o => {
+            o.HasKey(v => v.Id);
+            o.Property(v => v.ConcurrencyStamp).IsConcurrencyToken();
+            o.Property(v => v.Name).HasMaxLength(80).IsRequired();
+
+            o.HasIndex(v => v.NormalizedName).HasDatabaseName("RoleNameIndex");
+
+            o.HasMany<IdentityUserRole<long>>().WithOne().HasForeignKey(ur => ur.RoleId).IsRequired();
         });
 
         b.Entity<IdentityUserLogin<long>>()
@@ -51,6 +66,9 @@ public class FiksDbContext : DbContext
 
         b.Entity<IdentityUserToken<long>>()
             .HasKey(v => new { v.UserId, v.LoginProvider, v.Name });
+
+        b.Entity<IdentityUserRole<long>>()
+            .HasKey(v => );
 
         base.OnModelCreating(b);
     }
