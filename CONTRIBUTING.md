@@ -32,7 +32,7 @@ ci - changes concerning the CI/CD toolchain (Dockerfiles, ...)
 ```
 
 #### Scope
-The scope of the commit.
+The scope of the commit. Optional, but recommended.
 ```text
 model - changes regarding database models or their derivatives
 database - changes to the database logic
