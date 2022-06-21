@@ -12,7 +12,7 @@ public class FiksDbContext : DbContext
     public DbSet<Models.School> School { get; set; }
 
     public DbSet<Models.User> User { get; set; }
-
+    
     public DbSet<IdentityUserLogin<long>> UserLogin { get; set; }
 
     public DbSet<IdentityUserToken<long>> UserToken { get; set; }
@@ -26,7 +26,7 @@ public class FiksDbContext : DbContext
             o.Property(v => v.Validated)
                 .HasDefaultValue(false);
         });
-
+        
         b.Entity<Models.User>(o =>
         {
             o.Ignore(v => v.AccessFailedCount);
@@ -68,7 +68,7 @@ public class FiksDbContext : DbContext
             .HasKey(v => new { v.UserId, v.LoginProvider, v.Name });
 
         b.Entity<IdentityUserRole<long>>()
-            .HasKey(v => );
+            .HasKey(v => new { v.RoleId, v.UserId });
 
         base.OnModelCreating(b);
     }
