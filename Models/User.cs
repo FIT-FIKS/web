@@ -11,5 +11,7 @@ namespace Fiks.Models
         User(string userName) : base(userName) { 
             TwoFactorEnabled = false;
         }
+
+        public School school { get; set; }
     }
 }
