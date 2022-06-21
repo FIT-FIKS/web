@@ -39,3 +39,14 @@ database - changes to the database logic
 frontend - change to the frontend
 ...
 ```
+
+#### Summary
+Use present simple tense when describing changes.  
+Keep the summary short and information dense. If you cannot describe the change in a short summary, you should split the commit into smaller ones.
+
+#### Example
+```text
+feat(frontend): center a div
+
+feat(backend): change the hashing function from MD5 to Argon2
+```
