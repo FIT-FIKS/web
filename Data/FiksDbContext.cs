@@ -15,6 +15,8 @@ public class FiksDbContext : DbContext
 
     public DbSet<Models.Correction> Correction { get; set; }
 
+    public DbSet<Models.Submission> Submission { get; set; }
+
     public DbSet<Models.File> File { get; set; }
 
     public DbSet<Models.User> User { get; set; }
@@ -38,7 +40,9 @@ public class FiksDbContext : DbContext
             o.HasCheckConstraint("CorrectionScoreCheckConstraintMOE0", "Score >= 0");
         });
 
-        b.Entity<Models.File>().HasKey(v => new { v.Id, v.Guid });
+        b.Entity<Models.File>(o => {
+            o.HasIndex(v => v.Guid).HasDatabaseName("FileGuidIndex");
+        });
         
         b.Entity<Models.User>(o =>
         {
