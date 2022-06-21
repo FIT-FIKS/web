@@ -11,6 +11,8 @@ public class FiksDbContext : DbContext
 
     public DbSet<Models.School> School { get; set; }
 
+    public DbSet<Models.Announcement> Announcement { get; set; }
+
     public DbSet<Models.User> User { get; set; }
     
     public DbSet<IdentityUserLogin<long>> UserLogin { get; set; }
