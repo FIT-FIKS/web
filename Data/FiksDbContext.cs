@@ -13,6 +13,8 @@ public class FiksDbContext : DbContext
 
     public DbSet<Models.Announcement> Announcement { get; set; }
 
+    public DbSet<Models.Correction> Correction { get; set; } 
+
     public DbSet<Models.User> User { get; set; }
     
     public DbSet<IdentityUserLogin<long>> UserLogin { get; set; }
@@ -27,6 +29,11 @@ public class FiksDbContext : DbContext
         b.Entity<Models.School>(o => {
             o.Property(v => v.Validated)
                 .HasDefaultValue(false);
+        });
+
+        b.Entity<Models.Correction>(o => {
+            o.HasCheckConstraint("CorrectionScoreCheckConstraintLOE100", "Score <= 100");
+            o.HasCheckConstraint("CorrectionScoreCheckConstraintMOE0", "Score >= 0");
         });
         
         b.Entity<Models.User>(o =>
