@@ -15,6 +15,10 @@ namespace Fiks.Models
         [Range(0, 100)]
         public int Score { get; set; }
 
+        [Required]
         public User Autor { get; set; }
+
+        [Required]
+        public Submission Submission { get; set; }
     }
 }
