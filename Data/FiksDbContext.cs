@@ -17,6 +17,8 @@ public class FiksDbContext : DbContext
 
     public DbSet<Models.Submission> Submission { get; set; }
 
+    public DbSet<Models.Task> Task { get; set; }
+        
     public DbSet<Models.File> File { get; set; }
 
     public DbSet<Models.User> User { get; set; }
