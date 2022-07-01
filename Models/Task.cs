@@ -26,6 +26,9 @@ namespace Fiks.Models
         public TaskType Type { get; set; }
 
         public IEnumerable<Submission> Submissions { get; set; }
+
+        public Script Script1 { get; set; }
+        public Script Script2 { get; set; }
     }
 
     public enum TaskType { 

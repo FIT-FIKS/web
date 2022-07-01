@@ -16,7 +16,9 @@ namespace Fiks.Models
         public string Path { get; set; }
 
         [Required]
-        public ScriptType MyProperty { get; set; }
+        public ScriptType ScriptType { get; set; }
+
+        public IEnumerable<Models.Task> Tasks { get; set; }
     }
 
     public enum ScriptType 
