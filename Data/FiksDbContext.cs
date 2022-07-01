@@ -21,6 +21,8 @@ public class FiksDbContext : DbContext
 
     public DbSet<Models.Script> Script { get; set; }
 
+    public DbSet<Models.Round> Round { get; set; }
+
     public DbSet<Models.File> File { get; set; }
 
     public DbSet<Models.User> User { get; set; }
