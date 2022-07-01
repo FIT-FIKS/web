@@ -10,5 +10,8 @@ namespace Fiks.Models
         public Models.File? Description { get; set; }
 
         public Models.File? File { get; set; }
+
+        [Required]
+        public Models.Task Task { get; set; }
     }
 }

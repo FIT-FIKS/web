@@ -24,6 +24,8 @@ namespace Fiks.Models
 
         [Required]
         public TaskType Type { get; set; }
+
+        public IEnumerable<Submission> Submissions { get; set; }
     }
 
     public enum TaskType { 

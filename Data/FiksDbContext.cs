@@ -36,6 +36,10 @@ public class FiksDbContext : DbContext
     public DbSet<IdentityRole<long>> Role { get; set; }
 
     protected override void OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder b) {
+        b.Entity<Models.Submission>(o => {
+            o.HasOne(v => v.Task).WithMany(v => v.Submissions).OnDelete(DeleteBehavior.Restrict);
+        });
+        
         b.Entity<Models.School>(o => {
             o.Property(v => v.Validated)
                 .HasDefaultValue(false);
