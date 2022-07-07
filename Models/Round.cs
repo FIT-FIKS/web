@@ -26,5 +26,8 @@ namespace Fiks.Models
         [Required]
         [StringLength(80)]
         public string Title { get; set; }
+
+        [Required]
+        public Season Season { get; set; }
     }
 }
