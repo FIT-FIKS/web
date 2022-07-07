@@ -39,6 +39,12 @@ public class FiksDbContext : DbContext
         b.Entity<Models.Submission>(o => {
             o.HasOne(v => v.Task).WithMany(v => v.Submissions).OnDelete(DeleteBehavior.Restrict);
         });
+
+        b.Entity<Models.Task>(o =>
+        {
+            o.HasOne(v => v.Script1).WithMany(v => v.Tasks1).OnDelete(DeleteBehavior.Restrict);
+            o.HasOne(v => v.Script2).WithMany(v => v.Tasks2).OnDelete(DeleteBehavior.Restrict);
+        });
         
         b.Entity<Models.School>(o => {
             o.Property(v => v.Validated)

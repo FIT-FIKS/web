@@ -17,6 +17,9 @@ namespace Fiks.Models
 
         [Required]
         public ScriptType ScriptType { get; set; }
+
+        public IEnumerable<Models.Task> Tasks1 { get; set; }
+        public IEnumerable<Models.Task> Tasks2 { get; set; }
     }
 
     public enum ScriptType 
