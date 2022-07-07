@@ -11,7 +11,7 @@ builder.Services.AddRazorPages( );
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddDbContext<FiksDbContext>(options =>
-        options.UseInMemoryDatabase(databaseName: "FIKSTest"));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("FiksWebDB")));
 }
 else
 {
