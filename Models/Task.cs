@@ -29,6 +29,9 @@ namespace Fiks.Models
 
         public Script Script1 { get; set; }
         public Script Script2 { get; set; }
+
+        [Required]
+        public Round Round { get; set; }
     }
 
     public enum TaskType { 
