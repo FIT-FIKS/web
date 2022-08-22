@@ -41,7 +41,7 @@ builder.Services.AddAuthentication(o =>
     o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
 }).AddCookie(IdentityConstants.ApplicationScheme, o =>
 {
-    o.LogoutPath = new PathString("/Account/Login"); // todo: změnit login path soptíku :)
+    o.LogoutPath = new PathString("/Account/Logout"); // todo: změnit logout path soptíku :)
     o.Events = new Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationEvents()
     {
         OnValidatePrincipal = SecurityStampValidator.ValidatePrincipalAsync
