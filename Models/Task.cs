@@ -9,7 +9,7 @@ namespace Fiks.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(80)]
+        [StringLength(5000)]
         public string Content { get; set; }
 
         [Required]
