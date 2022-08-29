@@ -26,8 +26,8 @@ namespace Fiks.Models
 
         public IEnumerable<Submission> Submissions { get; set; }
 
-        public Script Script1 { get; set; }
-        public Script Script2 { get; set; }
+        public Script GenerationScript { get; set; }
+        public Script CorrectionScript { get; set; }
 
         [Required]
         public Round Round { get; set; }
