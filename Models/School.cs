@@ -19,6 +19,7 @@ namespace Fiks.Models
         [StringLength(80)]
         public string Address { get; set; }
 
+        [Required]
         public bool? Validated { get; set; }
 
         [StringLength(80)]
