@@ -26,12 +26,6 @@ public static class SeedData
                 ID = 2
             };
 
-
-            context.Season.AddRange(
-                season1,
-                season2  
-            );
-
             var round1 = new Round
             {
                 Id =                    0,
@@ -68,6 +62,11 @@ public static class SeedData
                 Season =                season2
             };
 
+            context.AddRange(
+                round1, 
+                round2, 
+                round3
+            );
             context.SaveChanges();
         }
     }
