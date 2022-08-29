@@ -7,9 +7,9 @@ namespace Fiks.Models
         [Key]
         public int Id { get; set; }
         
-        public Models.File? Description { get; set; }
+        public Models.File? DescriptionFile { get; set; }
 
-        public Models.File? File { get; set; }
+        public Models.File? CodeFile { get; set; }
 
         [Required]
         public Models.Task Task { get; set; }
