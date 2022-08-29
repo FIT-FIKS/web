@@ -15,7 +15,6 @@ namespace Fiks.Models
         [Required]
         public int MaxScore { get; set; }
 
-        [Required]
         public File ReferenceSolution { get; set; }
 
         [Required]
