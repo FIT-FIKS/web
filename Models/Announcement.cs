@@ -10,8 +10,12 @@ namespace Fiks.Models
         public DateTime Date { get; set; } = DateTime.Now;
 
         [Required]
-        [StringLength(80)]
+        [StringLength(120)]
         public string Title { get; set; }
+
+        [Required]
+        [StringLength(2000)]
+        public string Text { get; set; }
 
         public User Autor { get; set; }
     }
