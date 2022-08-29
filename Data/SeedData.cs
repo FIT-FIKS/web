@@ -16,14 +16,14 @@ public static class SeedData
             {
                 Title = "2021/2022",
                 Description = "Ročník 2021/2022",
-                ID = 0
+                ID = 1
             };
 
             var season2 = new Season
             {
                 Title = "2022/2023",
                 Description = "Ročník 2022/2023", 
-                ID = 1
+                ID = 2
             };
 
 
