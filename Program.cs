@@ -36,6 +36,12 @@ builder.Services.AddIdentityCore<Fiks.Models.User>(o =>
 
 builder.Services.AddAuthentication(o =>
 {
+    /*
+     Refer to:
+     https://docs.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-6.0#authentication-concepts
+     https://docs.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-6.0#authentication-scheme
+     https://stackoverflow.com/a/54850324
+    */
     o.DefaultAuthenticateScheme = IdentityConstants.ApplicationScheme;
     o.DefaultChallengeScheme = IdentityConstants.ApplicationScheme;
     o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
