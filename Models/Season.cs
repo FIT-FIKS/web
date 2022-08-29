@@ -5,7 +5,7 @@ namespace Fiks.Models;
 
 public class Season
 {
-    public int ID { get; set; }
+    public int Id { get; set; }
     
     [Required]
     [StringLength(64)]

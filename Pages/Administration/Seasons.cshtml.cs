@@ -42,6 +42,6 @@ public class SeasonsModel : PageModel
         var ent = context.Season.Add(Season);
         context.SaveChanges();
 
-        return RedirectToPage("./Seasons", ent.Entity.ID);
+        return RedirectToPage("./Seasons", ent.Entity.Id);
     }
 }
