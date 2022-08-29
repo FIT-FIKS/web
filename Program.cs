@@ -55,7 +55,7 @@ builder.Services.AddAuthentication(o =>
 }).AddCookie(IdentityConstants.ExternalScheme, o =>
 {
     o.Cookie.Name = IdentityConstants.ExternalScheme;
-    o.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
+    o.ExpireTimeSpan = TimeSpan.FromDays(90);
 });
 
 builder.Services.AddScoped<ISecurityStampValidator, SecurityStampValidator<Fiks.Models.User>>();
