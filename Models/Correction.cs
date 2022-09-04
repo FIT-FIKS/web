@@ -8,8 +8,7 @@ namespace Fiks.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(80)]
-        public string Feedback { get; set; }
+        public File Feedback { get; set; }
 
         [Required]
         [Range(0, 100)]
