@@ -20,7 +20,6 @@ namespace Fiks.Models
         [Required]
         public int Penaliazation { get; set; }
 
-        [Required]
         public DateTime PenalizationStart { get; set; }
 
         [Required]
