@@ -18,9 +18,10 @@ namespace Fiks.Models
         public DateTime OpenTo { get; set; }
 
         [Required]
-        public int Penaliazation { get; set; }
+        /// Percentage points: how many percent are substracted
+        /// from each user's attempt
+        public int Penalization { get; set; }
 
-        [Required]
         public DateTime PenalizationStart { get; set; }
 
         [Required]

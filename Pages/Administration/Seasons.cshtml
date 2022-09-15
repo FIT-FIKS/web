@@ -16,7 +16,7 @@
     <tbody>
     @foreach (var item in Model.Seasons) {
         <tr>
-            <td><a asp-page="./Seasons" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Title)</a></td>
+            <td><a asp-page="./Seasons" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Title)</a></td>
             <td>@Html.DisplayFor(modelItem => item.Description)</td>
         </tr>
     }
