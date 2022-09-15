@@ -42,8 +42,8 @@ public class FiksDbContext : DbContext
 
         b.Entity<Models.Task>(o =>
         {
-            o.HasOne(v => v.Script1).WithMany(v => v.Tasks1).OnDelete(DeleteBehavior.Restrict);
-            o.HasOne(v => v.Script2).WithMany(v => v.Tasks2).OnDelete(DeleteBehavior.Restrict);
+            o.HasOne(v => v.CorrectionScript).WithMany(v => v.TasksToCorrect).OnDelete(DeleteBehavior.Restrict);
+            o.HasOne(v => v.GenerationScript).WithMany(v => v.TasksToGenerate).OnDelete(DeleteBehavior.Restrict);
         });
         
         b.Entity<Models.School>(o => {
