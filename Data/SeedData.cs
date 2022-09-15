@@ -11,20 +11,62 @@ public static class SeedData
             if (context == null || context.Season == null) throw new ArgumentNullException("No season in context");
 
             if (context.Season.Any()) return; // already seeded
-            
-            context.Season.AddRange(
-                new Season
-                {
-                    Title = "2021/2022",
-                    Description = "Ročník 2021/2022"
-                },
-                new Season
-                {
-                    Title = "2022/2023",
-                    Description = "Ročník 2022/2023"
-                }
-            );
 
+            var season1 = new Season
+            {
+                Title = "2021/2022",
+                Description = "Ročník 2021/2022",
+                Id = 1
+            };
+
+            var season2 = new Season
+            {
+                Title = "2022/2023",
+                Description = "Ročník 2022/2023", 
+                Id = 2
+            };
+
+            var round1 = new Round
+            {
+                Id =                    0,
+                Title =                 "Hledání kočkoholek",
+                Descrption =            "Hledání soptíka v sukni s ouškama",
+                Penalization =         50,
+                PenalizationStart =     DateTime.Now.AddMinutes(1),
+                OpenFrom =              DateTime.Now.AddSeconds(30),
+                OpenTo =                DateTime.Now.AddMinutes(1).AddSeconds(30),
+                Season = season1
+            };
+
+            var round2 = new Round
+            {
+                Id =                    0,
+                Title =                 "Hledání kočkoholek, část druhá",
+                Descrption =            "Hledání modexe v sukni s ouškama",
+                Penalization =         50,
+                PenalizationStart =     DateTime.Now.AddMinutes(1),
+                OpenFrom =              DateTime.Now.AddSeconds(30),
+                OpenTo =                DateTime.Now.AddMinutes(1).AddSeconds(30),
+                Season =                season1
+            };
+
+            var round3 = new Round
+            {
+                Id =                    0,
+                Title =                 "Hledání kočkokluka",
+                Descrption =            "Hledá se BitNinja",
+                Penalization =         50,
+                PenalizationStart =     DateTime.Now.AddMinutes(1),
+                OpenFrom =              DateTime.Now.AddSeconds(30),
+                OpenTo =                DateTime.Now.AddMinutes(1).AddSeconds(30),
+                Season =                season2
+            };
+
+            context.AddRange(
+                round1, 
+                round2, 
+                round3
+            );
             context.SaveChanges();
         }
     }
